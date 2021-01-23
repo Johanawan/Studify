@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home{% block title %} | Dasboard {% endblock title %}</title>
-</head>
-<body>
-    <div class="container">
-        <h1>Studify</h1>
-    </div>
-</body>
-</html>
+{% extends 'partials/_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Logo -->
+<img class="logo" src="{% static 'images/logo.png' %}" alt="">
+
+<br>
+<br>
+
+{% include 'partials/_cards.html' %}
+
+{% endblock content %}
