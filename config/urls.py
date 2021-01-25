@@ -17,7 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    # Admin
     path('admin/', admin.site.urls),
+
+    # Home
     path("", include("accounts.urls")),
+
+    # Cards
     path("calculator/", include("calculator.urls")),
+    path("dictionary/", include("dictionary.urls")),
+
 ]

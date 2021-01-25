@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studify | Dictionary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+            background-color: #e7dfdf;
+          }
+        #container {
+            width: 1000px;
+            height: 550px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .logo {
+            width: 220px;
+        }
+        .back {
+            position: absolute;
+            left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'home' %}" class="btn btn-warning back">Back</a>
+
+    <div id="container">
+        <img class="logo" src="{% static 'images/logo-dictionary.png' %}" alt="logo-dictionary">
+
+        <form action="">
+            <label for="languages">Choose a language:</label>
+            <select name="language" id="languages">
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+            </select>
+            <br><br>
+    
+            <input type="text" name="dictionary" id="word">
+    
+    
+    
+    
+            <input type="submit" value="Submit">
+          </form>
+    </div>
+
+
+</body>
+</html>
