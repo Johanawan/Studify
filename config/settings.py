@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",
     "calculator.apps.CalculatorConfig",
     "dictionary.apps.DictionaryConfig",
+    "todo.apps.TodoConfig",
 ]
 
 MIDDLEWARE = [

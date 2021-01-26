@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studify | To-Do List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+            background-color: #e7dfdf;
+          }
+          #container {
+            width: 1000px;
+            height: 550px;
+            margin: 20px auto;
+            text-align: center;
+          }
+          .logo {
+              width: 220px;
+          }
+          .back {
+            position: absolute;
+            left: 30px;
+        }
+          
+    </style>
+
+</head>
+<body>
+
+<a href="{% url 'home' %}" class="btn btn-warning back">Back</a>
+
+<div id="container">
+    <img class="logo" src="{% static 'images/logo-todo.png' %}" alt="logo-todo">
+</div>
+</body>
+</html>

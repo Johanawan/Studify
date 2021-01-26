@@ -26,5 +26,6 @@ urlpatterns = [
     # Cards
     path("calculator/", include("calculator.urls")),
     path("dictionary/", include("dictionary.urls")),
+    path("todo/", include("todo.urls")),
 
 ]
