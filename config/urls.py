@@ -27,5 +27,5 @@ urlpatterns = [
     path("calculator/", include("calculator.urls")),
     path("dictionary/", include("dictionary.urls")),
     path("todo/", include("todo.urls")),
-
+    path("timer/", include("timer.urls")),
 ]

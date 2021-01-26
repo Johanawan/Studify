@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "calculator.apps.CalculatorConfig",
     "dictionary.apps.DictionaryConfig",
     "todo.apps.TodoConfig",
+    "timer.apps.TimerConfig",
 ]
 
 MIDDLEWARE = [
