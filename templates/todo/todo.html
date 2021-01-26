@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studify | To-Do List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+            background-color: #e7dfdf;
+        }
+        #container {
+        width: 1000px;
+        height: 550px;
+        margin: 20px auto;
+        
+        }
+
+        .back {
+        position: absolute;
+        left: 30px;
+        }
+        .logo {
+            width: 220px;
+            
+        }
+        .logo-container {
+            text-align: center;
+        }
+        input{
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        input::placeholder {
+        color: #d3d3d3;
+        }
+        .submit{
+            background-color: #6BA3E8;
+        }
+        .center-column{
+            width:600px;
+            margin: 20px auto;
+            padding:20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .item-row{
+            background-color: #4abef0;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 3px;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .add {
+            background-color:#5194E2;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<a href="{% url 'home' %}" class="btn btn-warning back">Back</a>
+
+<div id="container">
+    <div class="logo-container">
+        <img class="logo" src="{% static 'images/logo-todo.png' %}" alt="logo-todo">
+    </div>
+    
+    <div class="center-column">
+        <form method="POST">
+            {% csrf_token %}
+            <div>
+                {{form.title}}
+                <input class="btn btn-info add" type="submit" value="Add Task">
+            </div>
+        </form>
+        
+        <div class="todo-list">
+            {% if tasks %}
+                {% for task in tasks %}
+                    <div class="item-row">
+                        <a class="btn btn-sm btn-success" href="{% url 'update-task' task.id %}">Update</a>
+                        <a class="btn btn-sm btn-danger" href="{% url 'delete-task' task.id %}">Delete</a>
+            
+                        {% if task.complete == True %}
+                        <strike>{{task}}</strike>
+                        {% else %}
+                        <span>{{task}}</span>
+                        {% endif %}
+                    </div>
+                    
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
