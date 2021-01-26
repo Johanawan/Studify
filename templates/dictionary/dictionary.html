@@ -28,6 +28,10 @@
         h1 {
             text-align: center;
         }
+        .card {
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
     </style>
 </head>
 <body>
@@ -55,7 +59,24 @@
     <div id="container">
         <div class="card">
             <div class="card-body">
-
+                {% if word_type %}
+                    <table class="table">
+                        <tr>
+                            <td>Word Type: </td>
+                            <td>{{ word_type }}</td>
+                        </tr>
+                        <tr>
+                            <td>Definition: </td>
+                            <td>{{ definition }}</td>
+                        </tr>
+                        <tr>
+                            <td>Example: </td>
+                            <td>{{ example }}</td>
+                        </tr>
+                    </table>
+                {% else %}
+                <p>Why don't you try looking up a word!</p>
+                {% endif %}
             </div>
         </div>
     </div>
