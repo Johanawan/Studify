@@ -35,6 +35,30 @@
 
 <div id="container">
     <img class="logo" src="{% static 'images/logo-todo.png' %}" alt="logo-todo">
+
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            {{form.title}}
+            <input type="submit" name="Create Task" value="Add Task">
+        </div>
+    </form>
+
+    {% if tasks %}
+        {% for task in tasks %}
+        <div>
+            <a href="{% url 'update-task' task.id %}">Update</a>
+            <a href="{% url 'delete-task' task.id %}">Delete</a>
+
+            {% if task.complete == True %}
+            <strike>{{task}}</strike>
+            {% else %}
+            <span>{{task}}</span>
+            {% endif %}
+        </div>
+            
+        {% endfor %}
+    {% endif %}
 </div>
 </body>
 </html>
