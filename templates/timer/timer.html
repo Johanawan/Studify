@@ -1,1 +1,93 @@
-<h1>Timer</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studify | Timer</title>
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- My JS -->
+    <script src="{% static 'js/timer.js' %}"></script>
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="{% static 'css/timer.css' %}">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/996973c893.js"></script>
+
+    <!-- <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+            background-color: #e7dfdf;
+          }
+        #container {
+            width: 1000px;
+            height: 350px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .logo {
+            width: 220px;
+        }
+        .back {
+            position: absolute;
+            left: 30px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style> -->
+</head>
+<body>
+    <a href="{% url 'home' %}" class="btn btn-warning back">Back</a>
+
+    <div id="container">
+        <img class="logo" src="{% static 'images/logo-timer.png' %}" alt="logo-dictionary">
+
+        <br>
+        <br>
+
+      <!-- Main Timer -->
+      <div class="container timer">
+        <div class="row">
+          <div class="col-5">
+            <h4 id="minutes"></h4>
+          </div>
+          <div class="col-2">
+            <h4>:</h4>
+          </div>
+          <div class="col-5">
+            <h4 id="seconds"></h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Finished Message -->
+      <div class="my-5">
+        <h3 id="done" class="text-center"></h3>
+      </div>
+
+      <!-- Start Button and reset button-->
+      <div class="container d-flex justify-content-center my-5">
+        <button class="btn play-btn" onclick="start_timer()">
+          <i class="fas fa-play fa-2x"></i>
+        </button>
+        <a href="{% url 'timer' %}"><i class="fas fa-redo-alt fa-2x"></i></a>
+      </div>
+    </div>
+
+
+</body>
+</html>
