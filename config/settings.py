@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # 3rd party apps
     "accounts.apps.AccountsConfig",
     "calculator.apps.CalculatorConfig",
+    "dictionary.apps.DictionaryConfig",
 ]
 
 MIDDLEWARE = [

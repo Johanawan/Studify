@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studify | Dictionary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+            background-color: #e7dfdf;
+          }
+        #container {
+            width: 1000px;
+            height: 350px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .logo {
+            width: 220px;
+        }
+        .back {
+            position: absolute;
+            left: 30px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .card {
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'home' %}" class="btn btn-warning back">Back</a>
+
+    <div id="container">
+        <img class="logo" src="{% static 'images/logo-dictionary.png' %}" alt="logo-dictionary">
+
+        <form method="POST">
+            {% csrf_token %}
+            <label for="languages">Choose a language:</label>
+            <select name="language" id="languages">
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+            </select>
+            <br><br>
+    
+            <input type="text" name="word" id="word">
+            <input type="submit" value="Submit">
+          </form>
+    </div>
+
+    <h1>Word: {{ word }}</h1>
+    <div id="container">
+        <div class="card">
+            <div class="card-body">
+                {% if word_type %}
+                    <table class="table">
+                        <tr>
+                            <td>Word Type: </td>
+                            <td>{{ word_type }}</td>
+                        </tr>
+                        <tr>
+                            <td>Definition: </td>
+                            <td>{{ definition }}</td>
+                        </tr>
+                        <tr>
+                            <td>Example: </td>
+                            <td>{{ example }}</td>
+                        </tr>
+                    </table>
+                {% else %}
+                <p>Why don't you try looking up a word!</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
