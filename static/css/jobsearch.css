@@ -1,0 +1,24 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #e7dfdf;
+}
+#container {
+  width: 1000px;
+  height: 550px;
+  margin: 20px auto;
+}
+
+.back {
+  position: absolute;
+  left: 30px;
+}
+.logo {
+  width: 220px;
+}
+.logo-container {
+  text-align: center;
+}
+
+.header {
+  text-align: center;
+}
