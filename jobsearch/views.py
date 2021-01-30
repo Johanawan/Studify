@@ -24,6 +24,7 @@ def jobSearch(request):
         for page in pages:
             # Create url format link
             url = "https://uk.indeed.com/jobs?q={}&l={}&start={}".format(job_title, job_location, page)
+            
 
             html = requests.get(url)
             #print(html.status_code)
@@ -44,7 +45,7 @@ def jobSearch(request):
                 listings["job_title"] = job_title
 
                 # Get Url
-                get_url = url + listing.find("a", {"title":True})["href"] 
+                get_url = "https://uk.indeed.com" + listing.find("a", {"title":True})["href"] 
                 listings["urls"] = get_url
                 
                 # Get company name
@@ -78,8 +79,8 @@ def jobSearch(request):
                 listings.clear()
 
                 
-        print(list_of_listings)
-            #print(listings)
+        #print(list_of_listings)
+        #print(listings)
 
     context = {
         "listings": list_of_listings,
