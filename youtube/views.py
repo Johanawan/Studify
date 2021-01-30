@@ -67,6 +67,3 @@ def youtube(request):
         "videos": videos
     }
     return render(request, "youtube/youtube.html", context)
-
-    
-# GOOGLE_API_KEY=AIzaSyA1i-lhuJe7SUEbdo8Jd2-uWTvSpS5X6TA
