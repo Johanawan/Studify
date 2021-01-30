@@ -5,10 +5,14 @@ body {
   background-color: #e7dfdf;
 }
 #container {
+  background-color: #e7dfdf;
   width: 1000px;
-  height: 350px;
+  height: 550px;
   margin: 20px auto;
   text-align: center;
+}
+.album {
+  background-color: #e7dfdf;
 }
 .logo {
   width: 220px;
@@ -17,10 +21,7 @@ body {
   position: absolute;
   left: 30px;
 }
-h1 {
-  text-align: center;
-}
-.card {
+
+.videos {
   border-radius: 8px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
