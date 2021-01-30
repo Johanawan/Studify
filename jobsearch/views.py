@@ -34,7 +34,7 @@ def jobSearch(request):
             
             job_listings = bs.find_all("div", {"class": "jobsearch-SerpJobCard"})
 
-            print(len(job_listings))
+            #print(len(job_listings))
 
             listings = {}
 

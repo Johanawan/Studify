@@ -1,6 +1,7 @@
-/* Body background and font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", "sans-serif";
   background-color: #e7dfdf;
 }
 
