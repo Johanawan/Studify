@@ -34,9 +34,39 @@
                 <input type="text" class="search-field location" name="location" placeholder="Location...">
                 <input class="search-btn" type="submit" value="Search">
             </div>
-
         </form>
     </div>
+
+    <div class="row">
+    {% for listing in listings %}
+        {% if forloop.counter0|divisibleby:3 %}
+            </div><br><div class="row">
+        {% endif %}
+            <div class="col">
+                <div class="col-md">
+                    <div class="card job-cards text-white mb-3">
+                        <div class="card-header">
+                            <h5 class="title card-title"><a href="{{listing.urls}}" target="_blank">{{listing.job_title}}</a></h5>
+                        </div>
+                        <div class="data card-body">
+                            <p><strong>Company:</strong> {{listing.company}}</p>
+                            <p><strong>Location:</strong> {{listing.location}}</p>
+                            <p><strong>Salary:</strong> {{listing.salary}}</p>
+                            <p><strong>Date Added:</strong> {{listing.date_added}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+
+
+
+
 </div>
+
+
+
+
+
 </body>
 </html>

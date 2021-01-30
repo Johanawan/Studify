@@ -6,6 +6,8 @@ import re
 # Create your views here.
 def jobSearch(request):
 
+    list_of_listings = []
+
     if request.method == "POST":
 
         # Get inputs from user
@@ -17,9 +19,7 @@ def jobSearch(request):
         job_location = job_location_raw.replace(" ", "+")
 
         # List of the first 4 pages of the paginator
-        pages = ["", "10", "20", "30"]
-
-        list_of_listings = []
+        pages = [""]
 
         for page in pages:
             # Create url format link
@@ -42,7 +42,12 @@ def jobSearch(request):
                 # Get job title
                 job_title = listing.find("a", {"title": True})["title"]
                 listings["job_title"] = job_title
+
+                # Get Url
+                get_url = url + listing.find("a", {"title":True})["href"] 
+                listings["urls"] = get_url
                 
+                # Get company name
                 company = listing.find("span", {"class": "company"}).get_text(strip=True)
                 listings["company"] = company
 
@@ -64,22 +69,20 @@ def jobSearch(request):
                 date_added = listing.find("span", {"class": "date"}).get_text()
                 listings["date_added"] = date_added
 
+                # Produce a new copy of a dictionary to prevent the data being cleared out below.
                 dict1 = listings.copy()
 
-                #print(dict1)
-                
                 # Append listings to list of listings
                 list_of_listings.append(dict1)
-                # print(list_of_listings)
-                # print(listings)
+
                 listings.clear()
-                # print(listings)
+
                 
         print(list_of_listings)
             #print(listings)
 
     context = {
-
+        "listings": list_of_listings,
     }
 
     return render(request, "jobsearch/jobsearch.html", context)
