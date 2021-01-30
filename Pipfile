@@ -11,6 +11,7 @@ psycopg2-binary = "==2.8.5"
 environs = "*"
 dj-database-url = "*"
 requests = "*"
+beautifulsoup4 = "*"
 
 [requires]
 python_version = "3.7"

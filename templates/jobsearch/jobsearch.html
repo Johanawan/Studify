@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studify | Job Search</title>
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="{% static 'css/jobsearch.css' %}">
+
+
+</head>
+<body>
+
+<a href="{% url 'home' %}" class="btn btn-warning back">Back</a>
+
+<div id="container">
+    <div class="logo-container">
+        <img class="logo" src="{% static 'images/logo-jobsearch.png' %}" alt="logo-todo">
+    </div>
+
+    <br>
+    <br>
+    
+    <div class="header">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-box">
+                <input type="text" class="search-field jobs" name="jobsearch" placeholder="Search Jobs...">
+                <input type="text" class="search-field location" name="location" placeholder="Location...">
+                <input class="search-btn" type="submit" value="Search">
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+    {% for listing in listings %}
+        {% if forloop.counter0|divisibleby:3 %}
+            </div><br><div class="row">
+        {% endif %}
+            <div class="col">
+                <div class="col-md">
+                    <div class="card job-cards text-white mb-3">
+                        <div class="card-header">
+                            <h5 class="title card-title"><a href="{{listing.urls}}" target="_blank">{{listing.job_title}}</a></h5>
+                        </div>
+                        <div class="data card-body">
+                            <p><strong>Company:</strong> {{listing.company}}</p>
+                            <p><strong>Location:</strong> {{listing.location}}</p>
+                            <p><strong>Salary:</strong> {{listing.salary}}</p>
+                            <p><strong>Date Added:</strong> {{listing.date_added}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+
+
+
+
+</div>
+
+
+
+
+
+</body>
+</html>
