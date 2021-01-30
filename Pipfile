@@ -12,6 +12,8 @@ environs = "*"
 dj-database-url = "*"
 requests = "*"
 beautifulsoup4 = "*"
+google-api-python-client = "*"
+isodate = "*"
 
 [requires]
 python_version = "3.7"
