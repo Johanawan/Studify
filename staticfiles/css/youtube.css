@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  font-family: "Roboto", "sans-serif";
+  background-color: #e7dfdf;
+}
+#container {
+  background-color: #e7dfdf;
+  width: 1000px;
+  height: 550px;
+  margin: 20px auto;
+  text-align: center;
+}
+.album {
+  background-color: #e7dfdf;
+}
+.logo {
+  width: 220px;
+}
+.back {
+  position: absolute;
+  left: 30px;
+}
+
+.videos {
+  border-radius: 8px;
+}
