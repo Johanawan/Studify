@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "dictionary.apps.DictionaryConfig",
     "todo.apps.TodoConfig",
     "timer.apps.TimerConfig",
+    "youtube.apps.YoutubeConfig",
 ]
 
 MIDDLEWARE = [

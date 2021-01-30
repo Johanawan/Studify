@@ -29,4 +29,5 @@ urlpatterns = [
     path("todo/", include("todo.urls")),
     path("timer/", include("timer.urls")),
     path("jobsearch/", include("jobsearch.urls")),
+    path("youtube/", include("youtube.urls")),
 ]
