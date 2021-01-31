@@ -26,11 +26,11 @@ What I need to learn:
 
 Tech Stack: Django, Python, HTML, CSS, JavaScript, PostgreSQL, Git, Heroku
 
-Studify Portal
+### Studify Portal
 
 ![Image of Dashboard](https://github.com/Johanawan/Studify/blob/main/Images/Studify1.JPG)
 
-## Job Search Function
+### Job Search Function
 The job search function in the link works in my local environment as you can see below but not in production. I need to figure out why,
 
 ![Image of Dashboard](https://github.com/Johanawan/Studify/blob/main/Images/jobsearch.JPG)
