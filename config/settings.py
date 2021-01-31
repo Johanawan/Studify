@@ -30,13 +30,11 @@ GOOGLE_API_KEY = env.str("GOOGLE_API_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = ["https://studify-portal1.herokuapp.com/", '127.0.0.1']
-
+ALLOWED_HOSTS = [".herokuapp.com", "localhost", "https://studify-portal1.herokuapp.com/", '127.0.0.1']
 
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
