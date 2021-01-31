@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  font-family: "Roboto", "sans-serif";
+  background-color: #e7dfdf;
+}
+#container {
+  width: 1000px;
+  height: 550px;
+  margin: 20px auto;
+}
+
+.back {
+  position: absolute;
+  left: 30px;
+}
+.logo {
+  width: 220px;
+}
+.logo-container {
+  text-align: center;
+}
+
+.header {
+  text-align: center;
+}
+
+.job-cards {
+  background-color: #fff;
+}
+
+.title {
+  font-size: 16px;
+  color: black;
+}
+
+.data {
+  font-size: 14px;
+  text-align: none;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}

@@ -14,7 +14,11 @@ requests = "*"
 beautifulsoup4 = "*"
 google-api-python-client = "*"
 isodate = "*"
+<<<<<<< HEAD
 gunicorn = "*"
+=======
+whitenoise = "*"
+>>>>>>> 4f4e6181a65fcfffbc16c18b88d6ece5fa623a77
 
 [requires]
 python_version = "3.7"
