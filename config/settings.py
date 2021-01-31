@@ -30,7 +30,7 @@ GOOGLE_API_KEY = env.str("GOOGLE_API_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://studify-portal.herokuapp.com/", "127.0.0.1:8000"]
 
 
 # Application definition
